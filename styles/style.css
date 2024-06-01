@@ -72,6 +72,14 @@
   }
 }
 
+@media (width <= 476px) {
+  .floppy_image {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 8px;
+  }
+}
+
 .header {
   width: min(698px, 99%);
   padding: 136px 0 15px 0;
@@ -94,6 +102,7 @@
   margin-bottom: 20px;
   text-decoration: none;
   color: var(--accent-color);
+  outline: none;
 }
 
 .h1 {
@@ -163,7 +172,7 @@
 .card__block {
   width: min(698px, 99%);
   background-color: var(--background-color);
-  margin: 0 auto 50px auto;
+  margin: 0 auto 52px auto;
   border: 2px solid var(--accent-color);
 }
 
@@ -192,6 +201,12 @@
      1px 0 var(--label-line-color), 
      0 -1px var(--label-line-color);
 }
+@media (width <= 476px) {
+  .card__corner-text{
+    inset-inline-end: 13px;
+  }
+}
+
 
 @supports((text-stroke: 1px var(--label-line-color)) or (-webkit-text-stroke: 1px var(--label-line-color))) {
   .card__corner-text  {
@@ -203,10 +218,18 @@
 
 .card__footer-text {
   margin: 25px;
+  margin-bottom: 27px;
+  line-height: 21px;
 }
 
+.card__footer-text:last-child{
+  margin-top: 0;
+  margin-block-end: 25px;
+}
+
+
 .card__title {
-  padding: 3px 10px;
+  padding: 5px 0 5px 10px;
   font-size: 18px;
   border-bottom: 2px solid var(--accent-color);
 }
@@ -216,6 +239,7 @@
   align-items: center;
   justify-content: end;
   margin: 0 25px 25px 0;
+  
 }
 
 .like-icon {
@@ -256,7 +280,8 @@
   align-items: center;
   justify-content: center;
   transition: border .3s ease;
-  margin-right: 4px;
+  padding: 0;
+  
 }
 
 .card__icon-button:focus-visible {
@@ -320,54 +345,11 @@
   width: 21px;
   height: 21px;
   margin-right: 8px;
-  stroke: var(--color-button-text);
   mix-blend-mode: difference;
-  z-index: 10;
+  color: var(--color-button-text);
+  
 }
 
-.card__icon-button:hover .main-body {
-  fill: var(--accent-color);
-  transition: fill .3s linear .05s; 
-}
-
-.card__icon-button:hover .core { 
-  fill: var(--accent-color);
-  transition: fill .3s linear; 
-}
-
-.card__icon-button:active .main-body {
-  fill: var(--color-body-heart);
-  transition: fill .3s linear .05s; 
-}
-
-.card__icon-button:active .core { 
-  fill: var(--color-body-heart);
-  transition: fill .3s linear; 
-}
-
-
-.like-icon.is-liked .main-body {
-  fill: var(--color-body-heart);
-  transition: fill .3s linear .05s; 
-}
-
-.like-icon.is-liked .core { 
-  fill: var(--color-body-heart);
-  transition: fill .3s linear; 
-}
-
-.like-icon.is-liked .contour { 
-  fill: var(--color-body-heart);
-  transition: fill .3s linear 0.06s; 
-}
-
-.is-liked .heart {
-  animation: like-skale .3s ease-in .1s alternate;
-}
-
-.is-liked .sparks {
-  animation: like-shine .3s ease-in .3s alternate;
-}
 
 .modal-window {
   width: 357px;
@@ -407,6 +389,7 @@
   z-index: 10;
   width: 90px;
   height: 40px;
+  color: var(--accent-color)
 }
 
 .modal-window__button {
@@ -416,35 +399,35 @@
 }
 
 dialog::backdrop {
-  background-color: rgb(0 0 0 / 0.8);
+  background-color: rgb(0 0 0 / 0.75);
 } 
 
 
-.image2 {
+.saturate30 {
   filter: saturate(30%);
 }
 
-.image3 {
+.high-bright {
   filter: saturate(500%) contrast(100%) brightness(100%);
 }
 
-.image4 {
+.grayscale {
   filter: saturate(200%) grayscale(50%) hue-rotate(25deg) sepia(30%) contrast(100%) brightness(100%);
 }
 
-.image5 {
+.high-contrast {
   filter: saturate(220%) invert(60%) contrast(200%) brightness(120%);
 }
 
-.image6 {
+.sepia {
   filter: saturate(30%) sepia(60%) invert(20%) grayscale(50%) contrast(200%);
 }
 
-.image7 {
+.blure {
   filter: saturate(80%) blur(5px);
 }
 
-.image8 {
+.mix {
   filter: saturate(30%) invert(20%) contrast(200%) hue-rotate(100deg) brightness(80%);
 }
 
@@ -452,3 +435,32 @@ dialog::backdrop {
   border-top: 2px solid var(--accent-color);
 }
 
+@media (width <= 476px) {
+  .save__button {
+      flex-direction: column;
+      width: 309px;
+      height: 83px;
+      padding: 15px 0;
+      justify-content: space-between;
+  }
+}
+
+@media (width <= 476px) {
+  .floppy_image {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 8px;
+  }
+}
+
+@media (width <= 476px) {
+  .h1 { font-size: 14px; }
+   
+ }
+ 
+
+ @media (width <= 476px) {
+  .header {
+      padding-top: 120px;
+  }
+}
