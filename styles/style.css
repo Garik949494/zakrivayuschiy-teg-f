@@ -19,15 +19,13 @@
   min-block-size: 100dvb;
   padding-top: 102px;
   font-family: var(--main-font), sans-serif;
-  font-variation-settings: 'wgth' var(--main-card-font-weight);
+  font-variation-settings: 'wght' var(--main-card-font-weight);
   color: var(--accent-color);
   font-size: 18px;
    background-image: var(--background-image);
   background-size: cover;
   background-attachment: fixed;
 }
-
-
 
 @supports (font-variation-settings: normal) {
   .page {
@@ -41,43 +39,16 @@
     min-height: 100vh;
   }  
   
-  .header {
-    padding-top: 120px;
-  }
-
+ 
   .header-logo {
     font-size: 49px;
   }
 
-  .h1 {
-    font-size: 14px;
-  }
-
+  
   h2 {
     line-height: 1.2;
   }
 
-  .save__button {
-    flex-direction: column;
-    width: 306px;
-    height: 80px;
-    padding: 15px 0;
-    justify-content: space-between; 
-  }
-
-  .floppy_image {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 8px;
-  }
-}
-
-@media (width <= 476px) {
-  .floppy_image {
-      width: 40px;
-      height: 40px;
-      margin-bottom: 8px;
-  }
 }
 
 .header {
@@ -105,7 +76,7 @@
   outline: none;
 }
 
-.h1 {
+.header__title {
   text-transform: uppercase;
   font-size: clamp(18px, 2.5vw, 23px);
   margin-bottom: 22px;
@@ -131,7 +102,7 @@
   position: absolute;
   left: -18px;
   color: transparent;
-  animation: pulse 1s infinite ease-in-out;
+  animation: pulse 1s infinite ease-in-out alternate;
 }
 
 .theme-menu__button:disabled:before {
@@ -148,7 +119,7 @@
 }
 
 .theme-menu__button:hover {
-  cursor: pointer;;
+  cursor: pointer;
 }
 
 .theme-menu__button:after {
@@ -157,7 +128,7 @@
   width: 0%;
   height: 2px;
   background-color: var(--accent-color);
-  transition: all 0.5s;
+  transition: all 0.3s;
 }
 
 .theme-menu__button:focus-visible::after {
@@ -168,6 +139,14 @@
   outline: none;
   opacity: .6;
 }
+
+.theme-menu__button:focus, 
+.theme-menu__button:hover, 
+.theme-menu__button:disabled, 
+.theme-menu__button:focus-visible { 
+   opacity: 60%; 
+}     
+
 
 .card__block {
   width: min(698px, 99%);
@@ -181,8 +160,11 @@
 }
 
 .card__main-image {
-  width: 100%;
-  display: block
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  inline-size: 100%;
+  aspect-ratio: 1 / 1;
 }
 
 .card__corner-text {
@@ -217,14 +199,9 @@
 } 
 
 .card__footer-text {
-  margin: 25px;
+  /*margin: 25px;*/
   margin-bottom: 27px;
   line-height: 21px;
-}
-
-.card__footer-text:last-child{
-  margin-top: 0;
-  margin-block-end: 25px;
 }
 
 
@@ -232,6 +209,8 @@
   padding: 5px 0 5px 10px;
   font-size: 18px;
   border-bottom: 2px solid var(--accent-color);
+  font-variation-settings: 'wght' var(--header-card-font-weight);
+ 
 }
 
 .button_container {
@@ -239,6 +218,7 @@
   align-items: center;
   justify-content: end;
   margin: 0 25px 25px 0;
+  gap:4px;
   
 }
 
@@ -266,7 +246,7 @@
   border: 2px solid var(--accent-color);
   background-color: transparent;
   line-height: 90%;
-  transition: all 0.5s;
+  transition: all 0.3s;
  
 }
 
@@ -338,8 +318,8 @@
   font-size: 14px;
   line-height: 90%;
   background-color: var(--background-color);
-  transition: all 0.5s;
-}
+  transition:all  0.3s ;
+} 
 
 .floppy_image {
   width: 21px;
@@ -349,7 +329,6 @@
   color: var(--color-button-text);
   
 }
-
 
 .modal-window {
   width: 357px;
@@ -402,8 +381,7 @@ dialog::backdrop {
   background-color: rgb(0 0 0 / 0.75);
 } 
 
-
-.saturate30 {
+.saturate {
   filter: saturate(30%);
 }
 
@@ -431,8 +409,9 @@ dialog::backdrop {
   filter: saturate(30%) invert(20%) contrast(200%) hue-rotate(100deg) brightness(80%);
 }
 
-.card__block-footer{
+.card__block-footer { 
   border-top: 2px solid var(--accent-color);
+  padding: 25px 25px 0 25px;
 }
 
 @media (width <= 476px) {
@@ -454,9 +433,10 @@ dialog::backdrop {
 }
 
 @media (width <= 476px) {
-  .h1 { font-size: 14px; }
-   
- }
+  .header__title { 
+    font-size: 14px; 
+  }
+}
  
 
  @media (width <= 476px) {
@@ -464,3 +444,4 @@ dialog::backdrop {
       padding-top: 120px;
   }
 }
+

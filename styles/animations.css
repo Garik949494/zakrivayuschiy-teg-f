@@ -20,13 +20,6 @@
  } 
 
 
-.theme-menu__button:focus, 
-.theme-menu__button:hover, 
-.theme-menu__button:disabled, 
-.theme-menu__button:focus-visible { 
-   opacity: 60%; 
-}     
-
   
 .sparks {
     fill: var(--color-body-heart);
